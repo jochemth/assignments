@@ -22,12 +22,11 @@ class BreweryController extends Controller
   {
     $form = $this->createForm(new ZipcodeType());
     $closestLocation = null;
-    
+
     $form->handleRequest($request);
 
         if ($form->isValid()) 
         {
-
           $formData = $form->getData();
 
           $origin = $formData['zipcode'];
@@ -35,7 +34,6 @@ class BreweryController extends Controller
           $client = new Curl('http://downloads.oberon.nl/opdracht/brouwerijen.php');
           $breweries = $client->get();
           $breweries = json_decode($breweries, true);
-          
           $destinations = array();
 
           if(isset($breweries['breweries']))
