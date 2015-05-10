@@ -8,8 +8,17 @@
     <h1 class="title">Kies een postcode</h1>
 
     <form action="{{ path('_welcome') }}" method="POST" id="brewery_form">
-        <input type="text" name="zipcode" />
+        {{ form_errors(form) }}
+
+        {{ form_row(form.zipcode) }}
+
+        {{ form_rest(form) }}
         <input type="submit" value="Kies" />
     </form>
     
+    {% if closest.name is defined %}
+      {{ closest.name }}
+      {{ closest.address }}
+      {{ closest.zipcode }} {{ closest.city }}
+    {% endif %}
 {% endblock %}
