@@ -5,6 +5,9 @@ namespace Oberon\AssignmentBundle\Location;
 use Oberon\AssignmentBundle\Client\Curl;
 use Oberon\AssignmentBundle\Location\Location;
 
+/**
+ * Service for using Google Api distance matrix api
+ */
 class DistanceMatrix 
 {
 
@@ -15,6 +18,12 @@ class DistanceMatrix
     $this->client = new Curl('http://maps.googleapis.com/maps/api/distancematrix/json');
   }
 
+  /**
+   * Get the distance between origin and destination(s)
+   * @param  string $origin       zipcode of origin
+   * @param  array  $destinations array of Location objects
+   * @return array               array of Location objects
+   */
   public function getDistance($origin, array $destinations) 
   {
     $queryString = '';
@@ -32,10 +41,12 @@ class DistanceMatrix
       }
     }
 
+    // make a http GET request to the distance matrix api
     $response = $this->client->get($queryString);    
 
     $distances = $this->handleResponse($response);
 
+    // add the distance to the correct Location object
     foreach ($distances as $key => $distance) 
     {
       $destinations[$key]->setDistance($distance);
@@ -44,6 +55,11 @@ class DistanceMatrix
     return $destinations;
   }
 
+  /**
+   * Create an array of distances in meters from the api response
+   * @param  string $response distance matrix api response
+   * @return array           array with distances in meters
+   */
   private function handleResponse($response)
   {
     $response = json_decode($response, true);

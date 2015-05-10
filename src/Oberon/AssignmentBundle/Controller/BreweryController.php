@@ -31,9 +31,11 @@ class BreweryController extends Controller
 
           $origin = $formData['zipcode'];
 
+          // get breweries
           $client = new Curl('http://downloads.oberon.nl/opdracht/brouwerijen.php');
           $breweries = $client->get();
           $breweries = json_decode($breweries, true);
+
           $destinations = array();
 
           if(isset($breweries['breweries']))
@@ -49,9 +51,11 @@ class BreweryController extends Controller
             }
           }
 
+          // get distance matrix service to get distance
           $distanceMatrix = $this->get('distance_matrix');
           $distances = $distanceMatrix->getDistance($origin, $destinations);
 
+          // sort the locations by closest distance first
           usort($distances, function($a, $b)
           {
             return $a->getDistance() > $b->getDistance();
