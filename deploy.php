@@ -20,3 +20,6 @@ server('vm', '192.168.0.144')
     ->stage('vm');
 
 set('repository', 'git@github.com:jochemth/assignments.git');
+task('deploy:writable', function () {
+
+});
