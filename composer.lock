@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e031a668552cbaccee1f94a8dec07341",
-    "content-hash": "38a0e4077ded2f1ebc234059923d0d54",
+    "hash": "f8cf0b5146a973f1bb6674825a214e2a",
+    "content-hash": "bdc2a8ffd30562bb02dc14ca0cac55cb",
     "packages": [
         {
             "name": "deployer/deployer",
@@ -539,12 +539,12 @@
             "target-dir": "Doctrine/Bundle/DoctrineCacheBundle",
             "source": {
                 "type": "git",
-                "url": "git@github.com:doctrine/DoctrineCacheBundle.git",
-                "reference": "9b7b22cea3aaaf6d53088c46a2cb08801ea38ace"
+                "url": "https://github.com/doctrine/DoctrineCacheBundle.git",
+                "reference": "e4b6f810aa047f9cbfe41c3d6a3d7e83d7477a9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineCacheBundle/zipball/9b7b22cea3aaaf6d53088c46a2cb08801ea38ace",
+                "url": "https://api.github.com/repos/doctrine/DoctrineCacheBundle/zipball/e4b6f810aa047f9cbfe41c3d6a3d7e83d7477a9d",
                 "reference": "e4b6f810aa047f9cbfe41c3d6a3d7e83d7477a9d",
                 "shasum": ""
             },
@@ -1231,6 +1231,49 @@
                 "sql"
             ],
             "time": "2014-01-12 16:20:24"
+        },
+        {
+            "name": "jlaso/ssh2",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jlaso/ssh2.git",
+                "reference": "3b057f1dabe015a45f9b43c3ec0638cb0cdf98ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jlaso/ssh2/zipball/3b057f1dabe015a45f9b43c3ec0638cb0cdf98ef",
+                "reference": "3b057f1dabe015a45f9b43c3ec0638cb0cdf98ef",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JLaso\\Ssh2\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joseluis Laso",
+                    "email": "jlaso@joseluislaso.es",
+                    "homepage": "http://www.joseluislaso.es"
+                }
+            ],
+            "description": "Automation tool for remote servers with pure PHP ssh2.",
+            "homepage": "https://github.com/jlaso/ssh2.git",
+            "keywords": [
+                "gps",
+                "gps-tools",
+                "jlaso"
+            ],
+            "time": "2015-02-05 13:30:02"
         },
         {
             "name": "justinrainbow/json-schema",
