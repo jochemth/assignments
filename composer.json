@@ -22,8 +22,10 @@
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
         "sensio/generator-bundle": "^2.5",
-        "deployer/deployer": "3.2.*",
-        "jlaso/ssh2": "^0.1.0"
+        "deployer/deployer": "^3.2",
+        "jlaso/ssh2": "^0.1.0",
+        "phpseclib/phpseclib": "^2.0",
+        "herzult/php-ssh": "^1.1"
     },
     "require-dev": {
     },
