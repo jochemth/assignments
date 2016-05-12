@@ -20,3 +20,4 @@ server('vm', '192.168.0.144')
     ->stage('vm');
 
 set('repository', 'git@github.com:jochemth/assignments.git');
+set('use_ssh2', false);
